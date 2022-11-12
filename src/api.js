@@ -13,3 +13,15 @@ export const login = (username, password) => new Promise((resolve, reject) => {
             reject(err)
         });
 });
+
+export const register = (username, password) => new Promise((resolve, reject) => {
+    const data = {
+        username: username,
+        password: password
+    }
+    axios.post(`${base_url}/create-account`, data)
+        .then(res => resolve(res))
+        .catch(err =>{
+            reject(err)
+        });
+});
