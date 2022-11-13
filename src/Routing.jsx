@@ -5,21 +5,13 @@ import Register from "./loginPage/Register"
 
 
 export default function Routing(){
-    const checkLogin = () =>{
-        console.log()
-        if(!sessionStorage.getItem('userID')){
-            return <Login/>
-        }
-        return <Register/>;
-    }
 
     return(
         <Router>
             <Routes>
-                <Route path="/" element={checkLogin()} />
+                <Route path="/" element={<Login/>} />
                 <Route path="/register" element={<Register/>}/>
             </Routes>
         </Router>
     );
-
 }

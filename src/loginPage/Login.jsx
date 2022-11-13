@@ -10,15 +10,11 @@ export default function Login(){
     let [error, setError] = useState(false);
 
 
-    useEffect(() => {
-
-    });
-
     const handleSubmit = (e) => {
         e.preventDefault();
         login(username, password).then((response) => {
             // set the token in local storage
-            localStorage.setItem("token", response.data);
+            sessionStorage.setItem("token", response.data);
             setError(false);
             setUsername("");
             setPassword("");
